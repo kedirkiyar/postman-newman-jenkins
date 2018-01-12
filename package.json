@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "project for storing postman tests",
   "scripts": {
-    "api-tests-production": "newman run /home/kedir/Downloads/Postman/postma-newman-jenkins/tests/sampleProject.postman_collection.json --reporters junit --reporter-junit-export newman.xml" 
+    "api-tests-production": "newman run /home/kedir/Downloads/Postman/postma-newman-jenkins/tests/sampleProject.postman_collection.json --reporters cli,junit --reporter-junit-export newman.xml" 
   },
   "author": "kedir kiyar",
   "dependencies": {
