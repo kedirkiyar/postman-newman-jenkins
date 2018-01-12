@@ -1,0 +1,90 @@
+{
+	"info": {
+		"name": "sampleProject",
+		"_postman_id": "bc984579-8d5b-77fc-921f-33a1212912b8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "06c1b50f-1c2b-4774-adfd-d306a3b3edad",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code name has string OK ->\" , function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"quia et suscipit\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": "postman,newman and jenkins"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRequests",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0109b9a-6a5d-4863-aa64-98949a2fe430",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": "https://jsonplaceholder.typicode.com/posts/1",
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
